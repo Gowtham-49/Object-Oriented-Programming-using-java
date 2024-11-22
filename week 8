@@ -1,0 +1,239 @@
+Week 8
+
+1. Final Variable:
+Once a variable is declared final, its value cannot be changed after it is initialized.
+It must be initialized when it is declared or in the constructor if it's not initialized at declaration.
+It can be used to define constants
+ final int MAX_SPEED = 120;  // Constant value, cannot be changed
+
+2. Final Method:
+A method declared final cannot be overridden by subclasses.
+It is used to prevent modification of the method's behavior in derived classes.
+public final void display() {
+    System.out.println("This is a final method.");
+}
+
+3. Final Class:
+A class declared as final cannot be subclassed (i.e., no other class can inherit from it).
+It is used to prevent a class from being extended and modified.
+public final class Vehicle {
+    // class code
+}
+Given a Java Program that contains the bug in it, your task is to clear the bug to the output.
+
+you should delete any piece of code. 
+
+
+
+
+class FinalExample
+{
+    int maxSpeed = 120;
+    public final void displayMaxSpeed()
+    {
+        System.out.println("The maximum speed is: " + maxSpeed + " km/h");
+    }
+}
+class SubClass extends FinalExample
+{
+    public void showDetails()
+    {
+        System.out.println("This is a subclass of FinalExample.");
+    }
+}
+class prog
+{
+    public static void main(String[] args)
+    {
+        FinalExample obj = new FinalExample();
+        obj.displayMaxSpeed();
+        SubClass subObj = new SubClass();
+        subObj.showDetails();
+    }
+}
+
+
+Create a base class Shape with a method called calculateArea(). Create three subclasses: Circle, Rectangle, and Triangle. Override the calculateArea() method in each subclass to calculate and return the shape's area.
+
+In the given exercise, here is a simple diagram illustrating polymorphism implementation:
+
+Polymorphism: Shape Class with Circle, Rectangle, and Triangle Subclasses for Area Calculation
+
+ abstract class Shape {
+    public abstract double calculateArea() ;
+    }
+}
+
+System.out.printf("Area of a Triangle :%.2f%n",((0.5)*base*height));  // use this statement
+
+sample Input :
+
+4    // radius of the circle to calculate area PI*r*r
+
+5   //  length of the rectangle
+
+6  // breadth of the rectangle to calculate the area of a rectangle
+
+4    // base of the triangle
+
+3   //  height of the triangle
+
+OUTPUT:
+
+Area of a circle :50.27
+Area of a Rectangle :30.00
+Area of a Triangle :6.00
+
+
+
+import java.util.*;
+abstract class s
+{
+    public abstract double calculateArea();
+}
+class c extends s
+{
+    double r;
+    c(double r)
+    {
+        this.r=r;
+    }
+    public double calculateArea()
+    {
+        double a=Math.PI*r*r;
+        System.out.printf("Area of a circle: %.2f\n",a);
+        return a;
+    }
+}
+class r extends s
+{
+    double l;
+    double b;
+    r(double l,double b)
+    {
+        this.l=l;
+        this.b=b;
+    }
+    public double calculateArea()
+    {
+        double a=l*b;
+        System.out.printf("Area of a Rectangle: %.2f\n",a);
+        return a;
+    }
+}
+class t extends s
+{
+    double b;
+    double h;
+    t(double b,double h)
+    {
+        this.b=b;
+        this.h=h;
+    }
+    public double calculateArea()
+    {
+        double a=b*h*0.5;
+        System.out.printf("Area of a Triangle: %.2f\n",a);
+        return a;
+    }
+}
+public class hello
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        double r1=sc.nextDouble();
+        c c1=new c(r1);
+        double l1=sc.nextDouble();
+        double b1=sc.nextDouble();
+        r r2=new r(l1,b1);
+        double b2=sc.nextDouble();
+        double h2=sc.nextDouble();
+        t t1=new t(b2,h2);
+        c1.calculateArea();
+        r2.calculateArea();
+        t1.calculateArea();
+    }
+}
+
+
+
+As a logic building learner you are given the task to extract the string which has vowel as the first and last characters from the given array of Strings.
+
+Step1: Scan through the array of Strings, extract the Strings with first and last characters as vowels; these strings should be concatenated.
+
+Step2: Convert the concatenated string to lowercase and return it.
+
+If none of the strings in the array has first and last character as vowel, then return no matches found  
+
+input1: an integer representing the number of elements in the array.
+
+input2: String array.
+
+Example 1:
+
+input1: 3
+
+input2: {“oreo”, “sirish”, “apple”}
+
+output: oreoapple
+
+Example 2:
+
+input1: 2
+
+input2: {“Mango”, “banana”}
+
+output: no matches found
+
+Explanation:
+
+None of the strings has first and last character as vowel.
+
+ 
+
+Hence the output is no matches found.
+
+Example 3:
+
+input1: 3
+
+input2: {“Ate”, “Ace”, “Girl”}
+
+output: ateace
+
+
+
+import java.util.*;
+public class hello
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int k=0;
+        String arr[]=new String[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.next();
+            arr[i]=arr[i].toLowerCase();
+            char ch=arr[i].charAt(0);
+            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+            {
+                int z=arr[i].length();
+                char x=arr[i].charAt(z-1);
+                if (x=='a' || x=='e' || x=='i' || x=='o'|| x=='u')
+                {
+                    k=1;
+                    System.out.print(arr[i]);
+                }
+               
+            }
+        }
+        if(k==0)
+        {
+            System.out.println("no matches found");
+        }
+       
+    }
+}
