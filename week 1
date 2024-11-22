@@ -1,0 +1,189 @@
+Week 1
+Write a program to find whether the given input number is Odd.
+
+If the given number is odd, the program should return 2 else It should return 1.
+
+Note: The number passed to the program can either be negative. positive or zero. Zero should NOT be treated as Odd.
+
+
+For example:
+
+Input	Result
+123
+2
+456
+1
+Answer:(penalty regime: 0 %)
+Ace editor not ready. Perhaps reload page?
+Falling back to raw text area.
+import java.util.*;
+public class oddEven{
+    public static void main(String args[]) {
+        int a;
+        Scanner scanner = new Scanner(System.in);
+        a=scanner.nextInt();
+        if(a<0)
+        {
+            a=(-1)*a;
+        }
+        if(a%2==0)
+        {
+            System.out.println("1");
+        }
+        else
+        {
+            System.out.println("2");
+        }
+    }
+}
+Feedback
+Input	Expected	Got	
+123
+2
+2
+456
+1
+1
+Passed all tests!  
+
+Question 2
+Correct
+Marked out of 5.00
+Flag question
+Question text
+Write a program that returns the last digit of the given number. Last digit is being referred to the least significant digit i.e. the digit in the ones (units) place in the given number.
+
+The last digit should be returned as a positive number.
+
+For example,
+
+if the given number is 197, the last digit is 7
+
+if the given number is -197, the last digit is 7
+
+For example:
+
+Input	Result
+197
+7
+-197
+7
+Answer:(penalty regime: 0 %)
+Ace editor not ready. Perhaps reload page?
+Falling back to raw text area.
+import java.util.*;
+public class digit { 
+    public static void main(String args[]) {
+        int a;
+        Scanner scanner = new Scanner(System.in);
+        a=scanner.nextInt();
+        if(a<0)
+        {
+            a=(-1)*a;
+        }
+        a=a%10;
+        System.out.println(a);
+    }
+}
+Feedback
+Input	Expected	Got	
+197
+7
+7
+-197
+7
+7
+Passed all tests!  
+
+Question 3
+Correct
+Marked out of 5.00
+Flag question
+Question text
+Rohit wants to add the last digits of two given numbers.
+
+For example,
+
+If the given numbers are 267 and 154, the output should be 11.
+
+Below is the explanation:
+
+Last digit of the 267 is 7
+
+Last digit of the 154 is 4
+
+Sum of 7 and 4 = 11
+
+Write a program to help Rohit achieve this for any given two numbers.
+
+Note: Tile sign of the input numbers should be ignored.
+
+i.e.
+
+if the input numbers are 267 and 154, the sum of last two digits should be 11
+
+if the input numbers are 267 and -154, the slim of last two digits should be 11
+
+if the input numbers are -267 and 154, the sum of last two digits should be 11
+
+if the input numbers are -267 and -154, the sum of last two digits should be 11
+
+
+For example:
+
+Input	Result
+267
+154
+11
+267
+-154
+11
+-267
+154
+11
+-267
+-154
+11
+Answer:(penalty regime: 0 %)
+Ace editor not ready. Perhaps reload page?
+Falling back to raw text area.
+import java.util.*;
+public class Even {
+    public static void main(String args[]) {
+        int a,b,c;
+        Scanner scanner = new Scanner(System.in);
+        a=scanner.nextInt();
+        b=scanner.nextInt();
+        a=a%10;
+        b=b%10;
+        if(a<0)
+        {
+            a=(-1)*a;
+        }
+        if(b<0)
+        {
+            b=(-1)*b;
+        }
+        a=a%10;
+        b=b%10;
+        System.out.println(a+b);
+    }
+}
+Feedback
+Input	Expected	Got	
+267
+154
+11
+11
+267
+-154
+11
+11
+-267
+154
+11
+11
+-267
+-154
+11
+11
