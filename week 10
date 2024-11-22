@@ -1,0 +1,140 @@
+Week 10
+Given an ArrayList, the task is to get the first and last element of the ArrayList in Java.
+
+Input: ArrayList = [1, 2, 3, 4] 
+Output: First = 1, Last = 4
+
+Input: ArrayList = [12, 23, 34, 45, 57, 67, 89] 
+Output: First = 12, Last = 89
+Approach:
+
+Get the ArrayList with elements.
+Get the first element of ArrayList using the get(index) method by passing index = 0.
+Get the last element of ArrayList using the get(index) method by passing index = size – 1.
+
+
+
+
+import java.util.*;
+public class main
+{
+    public static void main(String[] args)
+    {  
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        ArrayList<Integer> list=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+            list.add(obj.nextInt());
+        }
+        
+        System.out.println("ArrayList: "+list);
+        System.out.println("First : "+list.get(0)+", "+"Last : "+list.get(n-1));
+        obj.close();
+        
+        
+    }
+}
+
+
+
+
+The given Java program is based on the ArrayList methods and its usage. The Java program is partially filled. Your task is to fill in the incomplete statements to get the desired output.
+
+list.set();
+
+list.indexOf());
+
+list.lastIndexOf())
+
+list.contains()
+
+list.size());
+
+list.add();
+
+ list.remove();
+
+The above methods are used for the below Java program. 
+
+
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Prog {
+
+public static void main(String[] args)
+{
+ Scanner sc= new Scanner(System.in);
+ int n = sc.nextInt();
+
+ ArrayList<Integer> list = new ArrayList<Integer>();
+
+ for(int i = 0; i<n;i++)
+ list.add(sc.nextInt());
+
+ System.out.println("ArrayList: " + list);
+
+
+ list.set(1,100);
+
+System.out.println("Index of 100 = "+list.indexOf(100));
+
+
+ System.out.println("LastIndex of 100 = "+list.lastIndexOf(100)); 
+
+System.out.println(list.contains(200)); 
+
+ System.out.println("Size Of ArrayList = "+list.size());
+
+    list.add(1,500);                    
+    list.remove(list.get(3));                        
+  System.out.print("ArrayList: " + list);
+ }
+}
+
+
+
+
+
+Write a Java program to reverse elements in an array list.
+
+
+
+
+Sample input and Output:
+Red
+Green
+Orange
+White
+Black
+Sample output
+List before reversing :                                                
+[Red, Green, Orange, White, Black]                                     
+List after reversing :                                                 
+[Black, White, Orange, Green, Red] 
+
+
+
+
+import java.util.*;
+public class Main
+{
+    
+    public static void main(String[] args)
+    {
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        ArrayList<String> list=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+            list.add(obj.next());
+        }
+        System.out.println("List before reversing :"+"\n"+list);
+        Collections.reverse(list);
+        System.out.println("List after reversing :"+"\n"+list);
+        obj.close();
+    }
+}
