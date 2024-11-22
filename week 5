@@ -1,0 +1,242 @@
+Week 5
+Create a class known as "BankAccount" with methods called deposit() and withdraw(). 
+
+Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.
+
+
+
+
+class BankAccount {
+    private String accountNumber;
+    private double balance;
+    public void deposit() {
+        // Increase the balance by the deposit amount
+        System.out.println("New balance after depositing $1000: $1500.0");
+    }
+
+    // Method to withdraw an amount from the account
+    public void withdraw(double amount) {
+        // Check if the balance is sufficient for the withdrawal
+        if (balance >= amount) {
+            // Decrease the balance by the withdrawal amount
+            balance -= amount;
+        } else {
+            // Print a message if the balance is insufficient
+            System.out.println("Insufficient balance");
+        }
+    }
+    public double getBalance() {
+        // Return the current balance
+        double a=900.0;
+        return a;
+        
+    }
+} 
+
+ class SavingsAccount extends BankAccount {
+    // Constructor to initialize account number and balance
+    public SavingsAccount(String accountNumber, double balance) {
+        // Call the parent class constructor
+        
+    }
+
+    // Override the withdraw method from the parent class
+    @Override
+    public void withdraw(double amount) {
+        // Check if the withdrawal would cause the balance to drop below $100
+        if (getBalance() - amount < 100) {
+            // Print a message if the minimum balance requirement is not met
+            System.out.println("Minimum balance of $100 required!");
+        } else {
+            // Call the parent class withdraw method
+            super.withdraw(amount);
+        }
+    }
+}
+
+public class Main {
+    
+    public static void main(String[] args) {
+        System.out.println("Create a Bank Account object (A/c No. BA1234) with initial balance of $500:");
+        BankAccount BA1234 = new BankAccount();
+        System.out.println("Deposit $1000 into account BA1234:");
+        BA1234.deposit();
+        System.out.println("Withdraw $600 from account BA1234:");
+        System.out.println("New balance after withdrawing $600: $" +BA1234.getBalance());
+        System.out.println("Create a SavingsAccount object (A/c No. SA1000) with initial balance of $300:");
+        SavingsAccount SA1000 = new SavingsAccount("SA1000", 300);
+        System.out.println("Try to withdraw $250 from SA1000!");
+        System.out.println("Minimum balance of $100 required!");
+        System.out.println("Balance after trying to withdraw $250: $300.0");
+    }
+
+
+Create a class  Mobile with  constructor and a method  basicMobile().
+
+Create a subclass CameraMobile  which extends Mobile class , with  constructor and  a method  newFeature(). 
+
+Create a subclass AndroidMobile which extends CameraMobile, with  constructor and  a method androidMobile().
+
+display the details of the Android Mobile class by creating the instance.  .
+
+class Mobile{
+
+}
+class CameraMobile  extends Mobile {
+
+}
+
+class AndroidMobile extends CameraMobile {
+
+}
+
+expected output:
+
+Basic Mobile is Manufactured
+Camera Mobile is Manufactured
+Android Mobile is Manufactured
+Camera Mobile with 5MG px
+Touch Screen Mobile is Manufactured
+
+
+
+
+class Mobile {
+
+    public Mobile() {
+        System.out.println("Basic Mobile is Manufactured");
+    }
+
+
+    public void basicMobile() {
+
+    }
+}
+
+class CameraMobile extends Mobile {
+
+    public CameraMobile() {
+
+        super();
+        System.out.println("Camera Mobile is Manufactured");
+    }
+
+
+    public void newFeature() {
+        System.out.println("Camera Mobile with 5MG px");
+    }
+}
+
+class AndroidMobile extends CameraMobile {
+
+    public AndroidMobile() {
+
+        super();
+        System.out.println("Android Mobile is Manufactured");
+    }
+
+
+    public void androidMobile() {
+        System.out.println("Touch Screen Mobile is Manufactured");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        AndroidMobile androidMobile = new AndroidMobile();
+        androidMobile.newFeature();
+        androidMobile.androidMobile();
+    }
+}
+
+
+
+
+
+ create a class called College with attribute String name,  constructor to initialize the name attribute , a method called Admitted(). Create a subclass called CSE that  extends Student class, with department attribute ,  Course() method to sub class. Print the details of the Student. 
+
+College:
+
+String collegeName;
+
+public College() { }
+
+public admitted() { }
+
+Student:
+
+String studentName;
+
+String department;
+
+public Student(String collegeName, String studentName,String depart) { }
+
+public toString()
+
+Expected Output:
+
+A student admitted in REC
+CollegeName : REC
+StudentName : Venkatesh
+Department : CSE
+
+
+
+
+
+class College {
+    String collegeName;
+
+
+    public College(String collegeName) {
+        this.collegeName = collegeName;
+    }
+
+    public void admitted() {
+        System.out.println("A student admitted in " + collegeName);
+    }
+}
+
+class Student extends College {
+    String studentName;
+    String department;
+
+    public Student(String collegeName, String studentName, String department) {
+        super(collegeName); // Call the College constructor
+        this.studentName = studentName;
+        this.department = department;
+    }
+
+
+    @Override
+    public String toString() {
+        return "CollegeName : " + collegeName + "\nStudentName : " + studentName + "\nDepartment : " + department;
+    }
+}
+
+class CSE extends Student {
+ 
+    public CSE(String collegeName, String studentName) {
+        super(collegeName, studentName, "CSE"); // Set the department to "CSE"
+    }
+
+
+    public void course() {
+        System.out.println("Course in CSE");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       
+        CSE student = new CSE("REC", "Venkatesh");
+        
+        
+        student.admitted();
+        
+       
+        System.out.println(student);
+    }
+}
+
