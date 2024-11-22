@@ -1,0 +1,203 @@
+Week 4
+Create a Class Mobile  with the attributes listed below,
+
+private String manufacturer;
+private String operating_system;
+public String color;
+private int cost;
+
+Define a Parameterized constructor to initialize the above instance variables. 
+
+Define getter and setter methods for the attributes above. 
+
+for example : setter method for manufacturer is 
+
+void setManufacturer(String manufacturer){
+
+this.manufacturer= manufacturer;
+
+}
+
+String getManufacturer(){
+
+ return manufacturer;}
+
+Display the object details by overriding the toString() method. 
+
+
+
+import java.util.*;
+public class Mobile{
+    
+    private String manufacturer;
+    private String operating_system;
+    public String color;
+    private int cost;
+    
+    public Mobile (String manufacturer,String operating_system,String color,int cost){
+        this.manufacturer=manufacturer;
+        this.operating_system=operating_system;
+        this.color=color;
+        this.cost=cost;
+    }
+    public void setManufacturer(String manufacturer){
+        this.manufacturer=manufacturer;
+        
+    }
+    public String getManufacturer(String manufacturer){
+        return manufacturer;
+    }
+    public void setoperating_system(String operating_system){
+        this.operating_system=operating_system;
+        
+    }
+    public String getoperating_system(String operating_system){
+        return operating_system;
+    }
+    public void setcolor(String color){
+        this.color=color;
+        
+    }
+    public String getcolor(String color){
+        return color;
+    }
+    public void setcost(int cost){
+        this.cost=cost;
+        
+    }
+    public int getcost(int cost){
+        return cost;
+    }
+    public String toString(){
+        return "manufacturer = "+manufacturer + "\noperating_system = "+operating_system + "\ncolor = "+color +"\ncost = "+cost;
+        
+    }
+    public static void main(String args[]){
+        Mobile mobile = new Mobile("Redmi","Andriod","Blue",34000);
+        System.out.println(mobile);
+    }
+}
+
+
+
+
+
+
+Create a class Student with two private attributes, name and roll number. Create three objects by invoking different constructors available in the class Student. 
+
+Student()
+
+Student(String name)
+
+Student(String name, int rollno)
+
+Input:
+
+No input
+
+Output:
+
+No-arg constructor is invoked
+1 arg constructor is invoked
+2 arg constructor is invoked
+Name =null , Roll no = 0
+Name =Rajalakshmi , Roll no = 0
+Name =Lakshmi , Roll no = 101
+
+
+
+
+import java.util.*;
+public class Student{
+    private String name;
+    private int roll;
+    public Student(){
+        this.name=null;
+        this.roll=0;
+        System.out.println("No-arg constructor is invoked");
+    }
+    public Student(String name){
+        this.name=name;
+        this.roll=0;
+        System.out.println("1 arg constructor is invoked");
+    }
+    public Student (String name,int roll){
+        this.name=name;
+        this.roll=roll;
+        System.out.println("2 arg constructor is invoked");
+    }
+    public String toString(){
+        return "Name ="+ name +" , Roll no = "+ roll;
+        }
+    public static void main(String args[]){
+        Student t = new Student();
+        
+        Student k = new Student("Rajalakshmi");
+        Student p = new Student("Lakshmi",101);
+        System.out.println(t);
+        System.out.println(k);
+        System.out.println(p);
+    }
+}
+
+
+
+
+Create a class called "Circle" with a radius attribute. You can access and modify this attribute using getter and setter methods. Calculate the area and circumference of the circle.
+
+Area of Circle = πr2 
+
+Circumference = 2πr
+
+Input:
+
+2
+
+Output:
+
+Area = 12.57
+Circumference = 12.57
+
+
+
+import java.util.*;
+class Circle
+{
+    private double radius;
+    public Circle(double radius){
+        this.radius=radius;
+       
+        
+    }
+    public void setRadius(double radius){
+        this.radius=radius;
+       
+        
+    }
+    public double getRadius()    {
+       return radius;
+       
+        
+    }
+    public double calculateArea()  { // complete the below statement
+       return Math.PI*radius*radius;
+        
+    }
+    public double calculateCircumference()    { 
+        // complete the statement
+       return Math.PI*2*radius;
+    }
+}
+class prog{
+    public static void main(String[] args)  {
+        int r;
+        Scanner sc= new Scanner(System.in);
+        r=sc.nextInt();
+        Circle c= new Circle(r);
+        System.out.println("Area = "+String.format("%.2f", c.calculateArea()));
+        System.out.println("Circumference = "+String.format("%.2f", c.calculateCircumference()));
+        
+        
+        
+    }
+}
